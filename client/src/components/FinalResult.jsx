@@ -37,7 +37,7 @@ const FinalResult = () => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((res) => {
-        console.log('response: ',res);
+
 
         setData(res);
       })
@@ -45,7 +45,7 @@ const FinalResult = () => {
 
     // 본인 정보 가져오기
     axios
-      .get("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/final/my", {
+      .get("https://chemylab.shop/final/my", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -60,7 +60,7 @@ const FinalResult = () => {
 
     // 친구 정보 가져오기
     axios
-      .get("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/final/friend", {
+      .get("https://chemylab.shop/final/friend", {
         headers: {
           Authorization: `Bearer ${token}`,
           codenum: `${friendnum}`,
@@ -83,7 +83,6 @@ const FinalResult = () => {
     if (friend.length === 4) {
 
       // 밸런스 값 비교하기
-      console.log(my[1][0].balacedata === friend[0][0].balacedata);
       for (let i = 0; i < 10; i++) {
         if (my[1][i].balacedata == friend[0][i].balacedata) {
             temp = temp+1
@@ -105,7 +104,6 @@ const FinalResult = () => {
         showPerson.push(friend[2][i].value);
       }
 
-      console.log('giveme: ', data);
       // 온도에 따른 멘트보여주기 tmep = 4
   
       if (data.resultMent.length === 7) {
@@ -131,8 +129,6 @@ const FinalResult = () => {
 }
 
   update();
-  console.log(showMy);
-  console.log(showFriend);
 
   const handleCopyClipBoard = async (text) => {
     try {

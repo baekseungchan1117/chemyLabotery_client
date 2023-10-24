@@ -27,7 +27,7 @@ export default function ValuePage() {
   };
 
   const submitValues = () => {
-    axios.post("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/values", 
+    axios.post("https://chemylab.shop/values", 
                 { values: selectedIds }, 
                 {
                     headers: {

@@ -12,17 +12,14 @@ const LoginForm = () => {
   const userData = (e) => {
     e.preventDefault();
 
-    console.log('userdata');
-
     const user = {
       userId: id,
       userPassword: password,
     };
     // 로그인 정보 api
     axios
-      .post("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/login", user)
+      .post("http://chemylab.shop:8080/login", user)
       .then((res) => {
-        console.log(res);
         if (res.data.isLogin === "True") {
           localStorage.setItem('accessToken', res.data.accessToken);
           navigate(`/main/${id}`);

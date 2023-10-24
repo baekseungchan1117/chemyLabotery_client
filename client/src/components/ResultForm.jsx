@@ -11,14 +11,13 @@ const ResultForm = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("accessToken");
-        axios.get('http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/result', {
+        axios.get('https://chemylab.shop/result', {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 // 'codenum': {friendnum}
             }   
         })
         .then(res  => {
-            console.log(res.data);
            setNumdate(res.data.numdata);
         })
         .catch(error => {

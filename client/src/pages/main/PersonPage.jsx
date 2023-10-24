@@ -26,7 +26,7 @@ export default function PersonPage() {
   };
 
   const submitValues = () => {
-    axios.post("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/person", 
+    axios.post("https://chemylab.shop/person", 
                 { values: selectedIds }, 
                 {
                     headers: {

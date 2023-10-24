@@ -20,9 +20,8 @@ const SignupForm = () => {
     };
 
     axios
-      .post("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/signup", user)
+      .post("https://chemylab.shop/signup", user)
       .then((res) => {
-        console.log(res);
         if (res.data.isSuccess === "True") {
           alert("회원가입이 완료되었습니다.!");
           navigate("/login");

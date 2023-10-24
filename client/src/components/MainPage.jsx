@@ -12,7 +12,7 @@ function MainPage() {
   const navigate = useNavigate();
 
   const deleteData =  (cnt) => {
-    axios.get(`http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/find/${name}`)
+    axios.get(`https://chemylab.shop/find/${name}`)
     .then(res => {
       // 테스트를 처음하는 경우
       if (res.data.length == 0) { 
@@ -32,7 +32,7 @@ function MainPage() {
           if (window.confirm('기존의 테스트 결과를 모두 지우고 새롭게 테스트를 시작할까요?'))
           { // '확인' 을 누른 경우 -> 데이터 삭제
             axios
-            .delete(`http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/delete/${name}/${cnt}`,{})
+            .delete(`https://chemylab.shop/delete/${name}/${cnt}`,{})
             .then((res) => {
               navigate("/start")
               
@@ -53,7 +53,7 @@ function MainPage() {
           { // '확인'을 누른 경우 -> persondata 데이터만 삭제
             
             axios
-            .delete(`http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/delete/${name}/${cnt}`,{})
+            .delete(`https://chemylab.shop/delete/${name}/${cnt}`,{})
             .then((res) => {
               console.log(res);
               

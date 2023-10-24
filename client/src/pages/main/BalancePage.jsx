@@ -38,13 +38,12 @@ export default function BalancePage() {
 
   const BalanceData = (value) => {
 
-    console.log(value);
-    axios.post("http://ec2-52-78-9-158.ap-northeast-2.compute.amazonaws.com:8080/balance", { value }, {
+    axios.post("https://chemylab.shop/balance", { value }, {
       headers: {
         Authorization: `Bearer ${token}` // 헤더에 토큰 포함해서 요청 보내기
       }
     })
-    .then(response => console.log(response))
+    .then()
     .catch(error => console.error("There was an error!", error));
   };
 
